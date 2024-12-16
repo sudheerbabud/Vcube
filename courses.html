@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCUBE - Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ff9800 !important;
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .nav-link {
+            color: white !important;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            left: 0;
+            bottom: -2px;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .course-btn {
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+        .course-content {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .content-wrapper {
+            flex: 1 0 auto;
+        }
+        footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo.jpg" alt="VCUBE Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About Us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="placements.html">Placements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login-signup.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login-signup.html">SignUp</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Courses Section -->
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Our Courses</h1>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('javaFullStack')">Java Full Stack</button>
+                    <div id="javaFullStack" class="course-content">
+                        <h4>Java Full Stack Curriculum:</h4>
+                        <ul>
+                            <li>HTML, CSS, Bootstrap</li>
+                            <li>JavaScript</li>
+                            <li>SQL, PL/SQL</li>
+                            <li>Core Java</li>
+                            <li>Advanced Java</li>
+                            <li>Spring, Spring Boot</li>
+                            <li>React</li>
+                            <li>Git Commands</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('pythonFullStack')">Python Full Stack</button>
+                    <div id="pythonFullStack" class="course-content">
+                        <h4>Python Full Stack Curriculum:</h4>
+                        <ul>
+                            <li>HTML, CSS, Bootstrap</li>
+                            <li>JavaScript</li>
+                            <li>SQL, PL/SQL</li>
+                            <li>Python</li>
+                            <li>Django</li>
+                            <li>Flask</li>
+                            <li>React</li>
+                            <li>Git Commands</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('devops')">DevOps</button>
+                    <div id="devops" class="course-content">
+                        <h4>DevOps Curriculum:</h4>
+                        <ul>
+                            <li>Linux Administration</li>
+                            <li>Shell Scripting</li>
+                            <li>Git & GitHub</li>
+                            <li>Jenkins</li>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                            <li>Ansible</li>
+                            <li>Terraform</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('testingTools')">Testing Tools</button>
+                    <div id="testingTools" class="course-content">
+                        <h4>Testing Tools Curriculum:</h4>
+                        <ul>
+                            <li>Manual Testing</li>
+                            <li>Selenium WebDriver</li>
+                            <li>TestNG</li>
+                            <li>Cucumber</li>
+                            <li>JMeter</li>
+                            <li>Postman</li>
+                            <li>JIRA</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('powerBI')">Power BI</button>
+                    <div id="powerBI" class="course-content">
+                        <h4>Power BI Curriculum:</h4>
+                        <ul>
+                            <li>Data Modeling</li>
+                            <li>DAX (Data Analysis Expressions)</li>
+                            <li>Power Query</li>
+                            <li>Data Visualization</li>
+                            <li>Report Creation</li>
+                            <li>Dashboard Design</li>
+                            <li>Data Refresh and Scheduling</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('digitalMarketing')">Digital Marketing</button>
+                    <div id="digitalMarketing" class="course-content">
+                        <h4>Digital Marketing Curriculum:</h4>
+                        <ul>
+                            <li>SEO (Search Engine Optimization)</li>
+                            <li>SEM (Search Engine Marketing)</li>
+                            <li>Social Media Marketing</li>
+                            <li>Content Marketing</li>
+                            <li>Email Marketing</li>
+                            <li>Google Analytics</li>
+                            <li>Digital Advertising</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary course-btn" onclick="toggleCourse('azureDevOps')">Azure DevOps</button>
+                    <div id="azureDevOps" class="course-content">
+                        <h4>Azure DevOps Curriculum:</h4>
+                        <ul>
+                            <li>Azure Boards</li>
+                            <li>Azure Repos</li>
+                            <li>Azure Pipelines</li>
+                            <li>Azure Test Plans</li>
+                            <li>Azure Artifacts</li>
+                            <li>Azure DevOps Server</li>
+                            <li>Integration with Azure Cloud Services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">© Copyrights VCUBE All Rights are Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleCourse(courseId) {
+            var content = document.getElementById(courseId);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
